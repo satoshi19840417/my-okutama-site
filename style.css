@@ -146,33 +146,44 @@ body {
 
 /* ヒーローセクション */
 .hero {
-  height: 75vh;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  height: 100vh; /* Changed to full viewport height */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
+  overflow: hidden; /* Ensures video doesn't spill out */
 }
 
-.hero::before {
+/* The black semi-transparent overlay */
+.hero-overlay {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   z-index: 1;
+}
+
+/* The background video */
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0; /* Ensures video is behind overlay and content */
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  background-color: rgba(0, 0, 0, 0.3);
   padding: 2rem;
   border-radius: 10px;
   max-width: 800px;
@@ -450,6 +461,16 @@ body {
 }
 
 @media (max-width: 768px) {
+  .hero {
+    background-image: url('images/農園画像.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-video {
+    display: none;
+  }
+
   .hamburger {
     display: block;
   }
