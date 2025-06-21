@@ -207,6 +207,7 @@ body {
   background-color: #f0f7f0;
   position: relative;
   z-index: 1;
+  scroll-margin-top: 90px; /* ヘッダーの高さ分オフセット */
 }
 
 .section::before {
@@ -473,19 +474,20 @@ body {
 
   .hamburger {
     display: block;
+    order: 1;
   }
 
   .nav-container {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateX(-100%);
+    transform: translateX(100%);
     transition: transform 0.3s ease;
   }
 
@@ -1277,5 +1279,55 @@ body {
 
   .activities-schedule {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ボトムナビゲーション */
+.bottom-nav {
+  display: none; /* デフォルトでは非表示 */
+}
+
+/* スマホ向けのスタイル */
+@media (max-width: 768px) {
+  /* .header .nav-container {
+    display: none;
+  } */
+
+  .bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .bottom-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    text-decoration: none;
+    color: #333;
+    font-size: 12px;
+  }
+
+  .bottom-nav-link.active {
+    color: #e74c3c;
+  }
+
+  .bottom-nav-link i {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+
+  main {
+    padding-bottom: 60px; /* ボトムナビゲーションの高さ分 */
   }
 }
