@@ -1,0 +1,30 @@
+name: Lighthouse CI
+
+on:
+  pull_request:
+
+jobs:
+  lighthouse:
+    name: Lighthouse Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        # Use npm ci for faster, more reliable installs in CI environments
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Run Lighthouse CI
+        uses: GoogleChrome/lighthouse-ci-action@v11
+        with:
+          # The action will automatically find and use lighthouserc.js
+          configPath: './lighthouserc.js' 
