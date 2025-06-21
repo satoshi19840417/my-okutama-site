@@ -10,3 +10,5 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Added to force git to recognize change
