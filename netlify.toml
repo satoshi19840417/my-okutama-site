@@ -1,19 +1,12 @@
-[build]
+﻿[build]
   publish = "dist"
   command = "npm run build"
 
 [build.environment]
   NODE_VERSION = "18"
+  NPM_VERSION = "10"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-# フォーム処理の設定（将来的に使用）
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff" 
