@@ -23,8 +23,8 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Install Lighthouse CI CLI
+        run: npm install -g @lhci/cli
+
       - name: Run Lighthouse CI
-        uses: GoogleChrome/lighthouse-ci-action@v11
-        with:
-          # The action will automatically find and use lighthouserc.js
-          configPath: './lighthouserc.js' 
+        run: lhci autorun 
