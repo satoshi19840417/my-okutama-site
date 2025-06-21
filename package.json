@@ -4,7 +4,11 @@
   "description": "A static website for My Okutama.",
   "main": "index.html",
   "scripts": {
-    "dev": "echo \"'dev' script not yet implemented. You can add a static file server here.\" && exit 0",
+    "dev": "vite",
+    "build": "vite build",
+    "convert-webp": "node convert-to-webp.js",
+    "update-html": "node update-html-for-webp.js",
+    "optimize-images": "npm run convert-webp && npm run update-html",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "prettier --write .",
     "lint": "prettier --check ."
@@ -26,6 +30,15 @@
   },
   "homepage": "https://github.com/satoshi19840417/my-okutama-site#readme",
   "devDependencies": {
-    "prettier": "^3.5.3"
+    "@rollup/rollup-win32-x64-msvc": "^4.44.0",
+    "cheerio": "^1.1.0",
+    "critters": "^0.0.23",
+    "glob": "^11.0.3",
+    "prettier": "^3.5.3",
+    "vite": "^6.3.5",
+    "vite-plugin-html": "^3.2.2"
+  },
+  "dependencies": {
+    "sharp": "^0.34.2"
   }
 }
