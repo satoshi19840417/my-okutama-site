@@ -31,6 +31,4 @@ jobs:
           urls: |
             http://localhost/index.html
             http://localhost/activities.html
-            http://localhost/mv.html
-          upload:
-            target: 'temporary-public-storage' 
+            http://localhost/mv.html 
