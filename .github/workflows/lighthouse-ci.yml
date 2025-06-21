@@ -25,31 +25,7 @@ jobs:
         run: npm run build
 
       - name: Run Lighthouse CI
-        uses: GoogleChrome/lighthouse-ci-action@v11
-        with:
-          static_dist_dir: './dist'
-          urls: |
-            http://localhost/index.html
-            http://localhost/activities.html
-            http://localhost/mv.html
-          temporaryPublicStorage: true
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
-
-      - name: Run Lighthouse CI
-        uses: GoogleChrome/lighthouse-ci-action@v11
+        uses: GoogleChrome/lighthouse-ci-action@v10
         with:
           static_dist_dir: './dist'
           urls: |
