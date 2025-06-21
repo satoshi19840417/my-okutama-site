@@ -26,19 +26,24 @@
   ],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=20"
+  },
   "bugs": {
     "url": "https://github.com/satoshi19840417/my-okutama-site/issues"
   },
   "homepage": "https://github.com/satoshi19840417/my-okutama-site#readme",
   "devDependencies": {
     "@lhci/cli": "^0.15.0",
-    "@rollup/rollup-win32-x64-msvc": "^4.44.0",
     "cheerio": "^1.1.0",
     "critters": "^0.0.23",
     "glob": "^11.0.3",
     "prettier": "^3.5.3",
     "vite": "^6.3.5",
     "vite-plugin-html": "^3.2.2"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-win32-x64-msvc": "^4.44.0"
   },
   "dependencies": {
     "sharp": "^0.34.2"
